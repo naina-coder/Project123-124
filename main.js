@@ -24,5 +24,18 @@ function gotPoses(results)
     if(results[0].length > 0)
     {
         console.log(results);
+
+        leftWristX = results[0].pose.leftWrist.x;
+        rightWristX = results[0].pose.rightWrist.x;
+        difference = floor(leftWristX - rightWristX);
+
     }
+}
+
+function draw()
+{
+    textSize(difference);
+    fill('#a83234')
+    text('Gauri', 600, 170)
+    stroke('#e3a3b9')
 }
